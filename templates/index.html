@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EYELISTIC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    background-image: linear-gradient(#00ff87, #60efff);;
+  }
+
+  .logo {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: url('eye-logo.png') no-repeat center/cover;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .brand-name {
+    font-size: 39px;
+    font-weight: bold;
+    vertical-align: middle;
+  }
+  .content {
+    padding: 20px;
+    width:50%;
+
+  }
+  .footer {
+  left: 0;
+  bottom: 0;
+  padding-top:5px;
+  padding-bottom:5px;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+  .social-links {
+    margin-top: 10px;
+  }
+  .social-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    line-height: 30px;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .social-icon:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .email-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .email-link:hover {
+    color: #007bff;
+  }
+   .login {
+    position:fixed;
+    border-radius: 8px;
+    padding-left:40px;
+    padding-right:40px;
+    right: 50px;
+    margin-top:30px;
+    width: 350px;
+    background: rgba(253, 253, 253, 0.4);
+  }
+
+     .output{
+     background:#fffe;
+     margin-bottom:30px;
+     font-size:28px;
+     text-align:center;
+
+     }
+  .form-label {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .input-field {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding-right:8px;
+  }
+  .submit-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  li{
+   font-family: Arial, sans-serif;
+   font-size:24px;
+   }
+
+</style>
+</head>
+<body>
+<br>
+<br>
+<div style="display:flex;">
+    <div class="content">
+    <h1 style="text-align:center;">Welcome to FloralFinesse</h1>
+       <h5 style="text-align:center;">Certainly! "Setosa," "Versicolor," and "Virginica" refer to three distinct species of iris flowers that are commonly studied and classified in botany and plant biology. These species are frequently used in the famous "Iris flower dataset," a dataset often used for machine learning and data analysis demonstrations. Here's more information about each species:
+       </h5> <ol>
+        <hr style="width:85%; border-width:2px; color: black; background-color:black">
+        <li><H2>Iris setosa:</H2></li>
+
+            <h3>Scientific Name:</h3> Iris setosa
+        <br><h3>Characteristics :</h3> Iris setosa is characterized by its relatively small size, with narrow leaves and distinctive flowers. Its flowers typically have white or light-colored petals with a splash of color on the falls (the lower petals).
+        <br><h3>Habitat :</h3> Iris setosa is commonly found in cold and wet regions, such as northern North America and parts of northeastern Asia. It often grows in marshes, bogs, and damp meadows.
+        <br><h3>Unique Features :</h3> The species has a unique adaptation where the lip of the flower (the signal) serves as a landing platform for pollinators, and it also acts as a guard against rain.
+            <br>
+            <br>
+        <li> <H2>Iris versicolor:</H2></li>
+
+            <h3>Scientific Name:</h3> Iris versicolor
+        <br><h3>Characteristics:</h3> Iris versicolor is known for its colorful flowers, which range from blue-violet to purple. Its leaves are broad and sword-like in shape.
+        <br><h3>Habitat:</h3> Iris versicolor is commonly found in wetlands, along stream banks, and in other moist habitats in North America.
+        <br><h3>Unique Features:</h3> The species is sometimes referred to as "blue flag" due to its distinctive flower color and appearance.
+            <br>
+            <br>
+        <li> <H2>Iris virginica:</H2></li>
+
+        <h3>Scientific Name:</h3> Iris virginica
+                <br><h3>Characteristics:</h3> Iris virginica is characterized by its showy and elegant flowers, which can range in color from pale lavender to deep purple. Its leaves are long and linear.
+                <br><h3>Habitat:</h3> Iris virginica is typically found in wetland habitats, including marshes, swamps, and the edges of ponds and lakes in North America.
+                <br><h3>Unique Features:</h3> The species is often referred to as "Southern Blue Flag" and is valued for its ornamental beauty.</ol>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="login">
+        <h2>Predict Flower</h2>
+        <form action="{{ url_for('predict')}}"method="post">
+            <label class="form-label" >Sepal Length </label>
+            <input class="input-field" type="text" placeholder="Sepal Length (cm)" name="sepal_length" required="required">
+
+            <label class="form-label" >Sepal Width </label>
+            <input class="input-field" type="text" name="sepal_width" placeholder="Sepal Width (cm)" required="required">
+
+            <label class="form-label" >Petal Length </label>
+            <input class="input-field" type="text" name="petal_length" placeholder="Petal Length (cm)" required="required" >
+
+            <label class="form-label" >Petal Width </label>
+            <input class="input-field" type="text" name="petal_width" placeholder="Petal Width (cm)" required="required">
+
+            <button class="submit-button" type="submit">Predict</button>
+        </form>
+        <h3> The Predicted Flower Is :</h3>
+        <div class="output" style="background: rgba(253, 253, 253, 0.4);">
+          <h3>{{ prediction_text }} </h3>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="social-links">
+        <a class="social-icon" href="https://github.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a class="social-icon" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+        <br>
+        <br>
+        <a class="email-link" href="mailto:contact@eyelistic.com">amoljaiswal2231@gmail.com</a>
+    </div>
+</div>
+</body>
+</html>
